@@ -50,6 +50,15 @@
         })
     }
 
+    function searchLevelGT(){
+        let TestDataClass = ncmb.DataStore(db); 
+        let levelGT= parseInt($("#level").val()); 
+        TestDataClass.greaterThan("level", levelGT).fetchAll() 
+        .then(function(results){
+            showResults(results);
+        })
+    }
+
     function showResults(results) {
       // テーブルのヘッダを生成
       let msg = "<table><tr><th>name</th><th>Lvl</th><th>attack</th><th>defence</th></tr>";
